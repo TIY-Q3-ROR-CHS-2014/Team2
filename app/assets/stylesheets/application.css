@@ -14,3 +14,40 @@
  *= require bootstrap
  *= require_tree .
  */
+input#user_first_name{
+  color: #000;
+}
+input#user_last_name{
+  color: #000;
+}
+input#user_github{
+  color: #000;
+}
+input#user_bio{
+  color: #000;
+}
+input#user_email{
+  color: #000;
+}
+input#user_img_url{
+  color: #000;
+}
+input#user_password{
+  color: #000;
+}
+input#user_password_confirmation{
+  color: #000;
+}
+input:focus{
+  color: #000;
+}
+
+input.submitbutton{
+  color: #000;
+}
+
+div.characteristics{
+  display: inline-block;
+  width: 100px;
+  float: center;
+}
