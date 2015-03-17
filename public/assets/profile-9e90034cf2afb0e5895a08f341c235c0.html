@@ -1,0 +1,43 @@
+<div class="container">
+<div class="logo">
+  <h1 class="codependent">CODEPENDENT</h1>
+</div>
+<div class="container">
+
+  <div class="mainProfile">
+    <h1>{{currentUser.first_name}} {{currentUser.last_name}}</h1>
+    <aside>
+      <img src="{{currentUser.img_url}}" alt="" style="width: 250px; border-radius: 1%;"> <br>
+      <p><a href="/users/edit">Edit Profile</a></p>
+    </aside>
+
+    <section>
+      <div class="bio">
+        <h2>About Me</h2>
+        <div class="myLinks">
+          <p>Github: <a href="http://github.com/{currentUser.github}}">{{currentUser.github}}</a></p>
+          <p>Email: <a href="mailto:{{currentUser.email}}">{{currentUser.email}}</a></p>
+        </div>
+        <h3>Bio</h3>
+        <p>{{currentUser.bio}}</p>
+      </div>
+
+      <div class="skills">
+        <h2>Current Strength: {{currentUser.strengths}}</h2>
+        <h2>I Need Help With: {{currentUser.weakness}}</h2>
+        <a class="helpButton" ng-click="help=!help">FIND PEER TUTORS</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="cardContainer" ng-show="help">
+<!--     <h2>Your Matches</h2> -->
+      <div class="userCard" ng-repeat="user in Users | matchFilter : currentUser">
+        <img src="{{user.img_url}}" alt="" style="width: 140px;">
+        <a href="#/user/{{user.id}}"><h1>{{user.first_name}} {{user.last_name}}</h1></a>
+        <a href="https://github.com/{{user.github}}">{{user.github}}</a>
+        <p>CONTACT: <a href="mailto:{{user.email}}">{{user.email}}</a></p>
+      </div>
+    </div>
+  </div>
+</div>
